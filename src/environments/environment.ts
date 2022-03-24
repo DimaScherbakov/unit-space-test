@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  giphyApi: {
+    /* use key from https://giphy.com/ because response by my user key doesn't return tags */
+    key: 'Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g',
+    origin: 'https://api.giphy.com/',
+    version: 'v1/',
+    endpoint: {
+      searchStickers: 'stickers/search'
+    }
+  }
 };
 
 /*
