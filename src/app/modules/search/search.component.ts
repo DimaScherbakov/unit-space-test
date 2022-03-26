@@ -16,7 +16,7 @@ export class SearchComponent {
      *
      * @type {EventEmitter<string[]>}
      */
-    @Output()result: EventEmitter<GIFObjectExtended[]> = new EventEmitter<GIFObjectExtended[]>();
+    @Output()searchResult: EventEmitter<GIFObjectExtended[]> = new EventEmitter<GIFObjectExtended[]>();
 
     constructor (private searchService: SearchService) {}
 
@@ -31,7 +31,7 @@ export class SearchComponent {
           debounceTime(500),
           distinctUntilChanged(),
           switchMap(query => this.searchService.getStickers(query)),
-          tap(result => this.result.emit(result)),
+          tap(result => this.searchResult.emit(result)),
           /* ngbTypeahead types workaround (it has to return an array) */
           map(() => [])
       )

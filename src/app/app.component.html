@@ -1,5 +1,5 @@
 <div class="container">
-    <app-search (result)="setImages($event)"></app-search>
+    <app-search (searchResult)="setImages($event)"></app-search>
     <div class="row app--hint">total images count: {{images.length}}</div>
     <app-gallery [images]="images"></app-gallery>
 </div>

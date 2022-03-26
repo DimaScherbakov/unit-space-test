@@ -40,7 +40,7 @@ describe('SearchComponent', () => {
             const images = [{},{},{}] as GIFObjectExtended[];
             // todo: how?
             component.search(of(query)).subscribe(() => {
-                expect(component.result.emit).toHaveBeenCalledOnceWith(images);
+                expect(component.searchResult.emit).toHaveBeenCalledOnceWith(images);
             })
         });
 
