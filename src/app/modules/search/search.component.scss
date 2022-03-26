@@ -1,0 +1,8 @@
+@import "bootstrap/scss/bootstrap";
+
+.search{
+  &--input{
+    @extend .rounded-0;
+    @extend .text-muted;
+  }
+}

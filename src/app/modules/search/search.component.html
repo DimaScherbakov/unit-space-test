@@ -1,4 +1,8 @@
-<input type="text"
-       class="form-control"
-       [ngbTypeahead]="search"
-/>
+<div class="row-pt">
+    <!--@extend not working with pseudo :focus-->
+    <input type="text"
+           class="g-0 form-control search--input"
+           [ngbTypeahead]="search"
+           [placeholder]="'#spacecat#cat'"
+    />
+</div>

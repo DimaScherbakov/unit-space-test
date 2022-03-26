@@ -27,7 +27,7 @@ export class GalleryComponent {
    *
    * @type {number}
    */
-  @Input() public pageSize: number = 3;
+  @Input() public pageSize: number = 9;
 
   /**
    * Start of a set to display

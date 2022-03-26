@@ -1,0 +1,8 @@
+@import "bootstrap/scss/bootstrap-utilities";
+
+.gallery{
+  &--image{
+    max-height:300px;
+    @extend .border;
+  }
+}

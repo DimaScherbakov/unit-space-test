@@ -1,10 +1,17 @@
-<img *ngFor="let image of images | slice:start:end"
-     [src]="image.images.original.url"
-     [alt]="image.title"
->
-<ngb-pagination
-    *ngIf="images.length"
-    [collectionSize]="images.length"
-    [(page)]="page"
-    [pageSize]="pageSize"
-></ngb-pagination>
+<div class="row-pt">
+    <img *ngFor="let image of images | slice:start:end"
+         [src]="image.images.original.url"
+         [alt]="image.title"
+         class="col-4 gallery--image"
+    >
+</div>
+<div class="row-pt">
+    <ngb-pagination
+        *ngIf="images.length"
+        [collectionSize]="images.length"
+        [(page)]="page"
+        [pageSize]="pageSize"
+        class="col-12 g-0"
+    ></ngb-pagination>
+</div>
+

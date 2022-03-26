@@ -7,6 +7,6 @@ import { GiphyApiConfig } from './interfaces/giphy';
  */
 export const giphyApiConfig: GiphyApiConfig = {
     /* images per page */
-//    limit : 9,
+    limit : 50,
     bundle:'clips_grid_picker'
 };
