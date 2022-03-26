@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthInterceptor } from './auth.interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { SearchModule } from './modules/search/search.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    SearchModule
   ],
   providers: [
     {

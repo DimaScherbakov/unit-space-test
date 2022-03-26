@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MultiResponse } from 'giphy-api';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'unit-space-test';
+  public searchResult: MultiResponse | undefined;
+
+  public setResult(event: MultiResponse):void {
+    this.searchResult = event;
+  }
 }
