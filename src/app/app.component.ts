@@ -14,6 +14,11 @@ export class AppComponent {
    */
   images: GIFObjectExtended[] = [];
 
+  /**
+   * Sets images to application state
+   *
+   * @param {GIFObjectExtended[]} event
+   */
   public setImages(event: GIFObjectExtended[]): void {
     this.images = event;
   }

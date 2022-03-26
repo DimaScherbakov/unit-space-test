@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { Observable, OperatorFunction } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map, startWith, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, switchMap, tap } from 'rxjs/operators';
 import { SearchService } from './search.service';
 import { GIFObjectExtended } from '../../interfaces/giphy';
 
@@ -12,18 +12,11 @@ import { GIFObjectExtended } from '../../interfaces/giphy';
 })
 export class SearchComponent {
     /**
-     *
+     * Emit set of images found by user query
      *
      * @type {EventEmitter<string[]>}
      */
     @Output()result: EventEmitter<GIFObjectExtended[]> = new EventEmitter<GIFObjectExtended[]>();
-
-    /**
-     * Initial value
-     *
-     * @type {string}
-     */
-    public initialValue: string = '#spacecat#cat';
 
     constructor (private searchService: SearchService) {}
 
@@ -33,9 +26,8 @@ export class SearchComponent {
      * @param {Observable<string>} text$
      * @return {Observable<[string]>}
      */
-  public search: OperatorFunction<string, readonly unknown[]> = (text$: Observable<string>) =>
+  public search: OperatorFunction<string, GIFObjectExtended[]> = (text$: Observable<string>) =>
       text$.pipe(
-          startWith(this.initialValue),
           debounceTime(500),
           distinctUntilChanged(),
           switchMap(query => this.searchService.getStickers(query)),
