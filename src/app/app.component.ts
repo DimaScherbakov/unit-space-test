@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MultiResponse } from 'giphy-api';
+import { GIFObjectExtended } from './interfaces/giphy';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,14 @@ import { MultiResponse } from 'giphy-api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public searchResult: MultiResponse | undefined;
+  /**
+   * All images by search query
+   *
+   * @type {GIFObjectExtended[]}
+   */
+  images: GIFObjectExtended[] = [];
 
-  public setResult(event: MultiResponse):void {
-    this.searchResult = event;
+  public setImages(event: GIFObjectExtended[]): void {
+    this.images = event;
   }
 }

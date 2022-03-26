@@ -1,2 +1,4 @@
-<app-search (result)="setResult($event)"></app-search>
-<pre>{{searchResult | json}}</pre>
+<app-search (result)="setImages($event)"></app-search>
+<pre>all images count: {{images.length}}</pre>
+<app-gallery [images]="images"></app-gallery>
+

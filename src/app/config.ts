@@ -1,6 +1,5 @@
 import { GiphyApiConfig } from './interfaces/giphy';
 
-
 /**
  * Basic application config
  *
