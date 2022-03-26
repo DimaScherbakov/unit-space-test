@@ -16,7 +16,7 @@ export class SearchComponent {
      *
      * @type {EventEmitter<string[]>}
      */
-    @Output()searchResult: EventEmitter<GIFObjectExtended[]> = new EventEmitter<GIFObjectExtended[]>();
+    @Output() searchResult: EventEmitter<GIFObjectExtended[]> = new EventEmitter<GIFObjectExtended[]>();
 
     constructor (private searchService: SearchService) {}
 
