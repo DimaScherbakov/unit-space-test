@@ -7,12 +7,15 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "husky": {
     "hooks": {
       "pre-commit": "ng lint",
-      "pre-push": "ng test --watch=false"
+      "pre-push": "ng test --watch=false && ng e2e --watch=false"
     }
   },
   "lint-staged": {
@@ -34,6 +37,7 @@
     "@ng-bootstrap/ng-bootstrap": "^12.0.1",
     "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.1.3",
+    "npm": "^8.5.5",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -47,11 +51,13 @@
     "@angular-eslint/template-parser": "13.1.0",
     "@angular/cli": "~13.3.0",
     "@angular/compiler-cli": "~13.3.0",
+    "@cypress/schematic": "^1.6.0",
     "@types/giphy-api": "^2.0.3",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.11.0",
     "@typescript-eslint/parser": "5.11.0",
+    "cypress": "latest",
     "eslint": "^8.2.0",
     "husky": "^4.3.8",
     "jasmine-core": "~4.0.0",
